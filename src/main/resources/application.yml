@@ -1,0 +1,35 @@
+server:
+  port: 64413
+
+spring:
+  application:
+    name: exec-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        jdbc:
+          batch_size: 100
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 1234
+    url: jdbc:h2:mem:testdb;MODE=mysql;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+
+eureka:
+  instance:
+    instance-id: exec-microservice-instance
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
