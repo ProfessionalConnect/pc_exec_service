@@ -39,6 +39,11 @@ dependencies {
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation ("org.assertj:assertj-core:3.19.0")
+    testImplementation ("org.junit.jupiter:junit-jupiter:5.7.1")
+    testImplementation ("org.mockito:mockito-inline:3.6.0")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+
 }
 
 dependencyManagement {
